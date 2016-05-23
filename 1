@@ -1,0 +1,328 @@
+//Declare shape + Variable
+float headX;
+float headY;
+float headWidth;
+float headHeight;
+
+//eyes
+float leftEyeX;
+float leftEyeY;
+float leftEyeWidth;
+float leftEyeHeight;
+
+float rightEyeX;
+float rightEyeY;
+float rightEyeWidth;
+float rightEyeHeight;
+
+//eyeballs
+float leftEball_X;
+float leftEball_Y;
+float leftEball_Width;
+float leftEball_Height;
+
+float rightEball_X;
+float rightEball_Y;
+float rightEball_Width;
+float rightEball_Height;
+
+//pupils
+//left
+float pupilLeft_X;
+float pupilLeft_Y;
+float pupilLeft_Width;
+float pupilLeft_Height;
+
+//right
+float pupilRight_X;
+float pupilRight_Y;
+float pupilRight_Width;
+float pupilRight_Height;
+
+//nose
+float nose_X1;
+float nose_Y1;
+float nose_X2;
+float nose_Y2;
+float nose_X3;
+float nose_Y3;
+
+float nostril_X1;
+float nostril_Y1;
+float nostril_X2;
+float nostril_Y2;
+float nostril_X3;
+float nostril_Y3;
+float nostril_X4;
+float nostril_Y4;
+float nostril_X5;
+float nostril_Y5;
+float nostril_X6;
+float nostril_Y6;
+float nostril_X7;
+float nostril_Y7;
+float nostril_X8;
+float nostril_Y8;
+
+float midNos_X;
+float midNos_Y;
+float midNos_w;
+float midNos_h;
+
+float sqNos_X;
+float sqNos_Y;
+float sqNos_w;
+float sqNos_h; 
+
+//mouth
+float upperLip_X;
+float upperLip_Y;
+float upLipWidth; 
+float upLipHeight;
+
+//lip line
+float lipLine_X1;
+float lipLine_X2;
+float lipLine_Y1;
+float lipLine_Y2;
+
+//Eyebrow
+float leftBrow_X;
+float leftBrow_Y;
+float leftBrow_W;
+float leftBrow_H;
+
+float rightBrow_X;
+float rightBrow_Y;
+float rightBrow_W;
+float rightBrow_H;
+
+//hair
+float hairLine_X1;
+float hairLine_Y1;
+float hairLine_X2;
+float hairLine_Y2;
+float hairLine_X3;
+float hairLine_Y3;
+float hairLine_X4;
+float hairLine_Y4;
+
+//head hair
+float headHair_X1;
+float headHair_Y1;
+float headHair_X2;
+float headHair_Y2;
+float headHair_X3;
+float headHair_Y3;
+float headHair_X4;
+float headHair_Y4;
+
+//Initialize
+void setup() {
+size(600,650);
+//head parameters
+headX = width/2;
+headY = height/2;
+headWidth = width/1.25;
+headHeight = headWidth*1.15;
+
+//eyes
+leftEyeX = headX/1.5;
+leftEyeY = headX;
+leftEyeWidth = headX/3;
+leftEyeHeight = leftEyeX*.22;
+
+rightEyeX = (headX/.75);
+rightEyeY = headX;
+rightEyeWidth = leftEyeWidth;
+rightEyeHeight = leftEyeHeight;
+
+//left eyeball
+leftEball_X = leftEyeX;
+leftEball_Y = leftEyeY;
+leftEball_Width = leftEyeWidth/2;
+leftEball_Height = leftEyeHeight;
+
+rightEball_X = rightEyeX;
+rightEball_Y = leftEyeY;
+rightEball_Width = rightEyeWidth/2;
+rightEball_Height = rightEyeHeight;
+
+//pupils
+//left
+pupilLeft_X = leftEball_X;
+pupilLeft_Y = leftEyeY;
+pupilLeft_Width = leftEball_Width/3;
+pupilLeft_Height = leftEball_Height/3;
+
+//right
+pupilRight_X = rightEball_X;
+pupilRight_Y = rightEball_Y;
+pupilRight_Width = rightEball_Width/3;
+pupilRight_Height = rightEball_Height/3;
+
+//brow
+leftBrow_X = pupilLeft_X * .68;
+leftBrow_Y = pupilLeft_Y * .8;
+leftBrow_W = leftEball_Width * 3.2;
+leftBrow_H = leftEball_Height * .3;
+
+rightBrow_X = pupilRight_X * .68;
+rightBrow_Y = pupilRight_Y * .8;
+rightBrow_W = rightEball_Width * 3.7;
+rightBrow_H = rightEball_Height * .3;
+
+//mouth
+upperLip_X = width/2;
+upperLip_Y = height * .8;
+upLipWidth = width/4;
+upLipHeight = height/20;
+
+//lip line
+lipLine_X1 = width * .375;
+lipLine_Y1 = height * .8;
+lipLine_X2 = width * .625;
+lipLine_Y2 = height * .8;
+
+//nose
+nose_X1 = width/2;
+nose_Y1 = height/2;
+nose_X2 = nose_X1 - (nose_X1 * .1);
+nose_Y2 = nose_Y1 * .3 + nose_Y1;
+nose_X3 = nose_X1 + (nose_X1 * .1);
+nose_Y3 = nose_Y1 * .3 + nose_Y1;
+
+//nostrils
+//left
+nostril_X1 = nose_X2;
+nostril_Y1 = nose_Y2 * 1.1;
+nostril_X2 = nose_X2 * 1.06;
+nostril_Y2 = nose_Y2 * .95;
+nostril_X3 = nose_X2 * 1.06;
+nostril_Y3 = nose_Y2 * 1.01;
+nostril_X4 = nose_X2 * 1.27;
+nostril_Y4 = nose_Y2 * .8;
+
+//right
+nostril_X5 = nose_X3 ;
+nostril_Y5 = nose_Y3 * 1.1;
+nostril_X6 = nose_X3 * .97;
+nostril_Y6 = nose_Y3 * .95;
+nostril_X7 = nose_X3 * .97;
+nostril_Y7 = nose_Y2 * 1.01;
+nostril_X8 = nose_X3 * .83;
+nostril_Y8 = nose_Y2 * .85;
+
+midNos_X = width * .505;
+midNos_Y = height * .65;
+midNos_w = width * .03;
+midNos_h = height * .03;
+
+sqNos_X = width * .488;
+sqNos_Y = height * .62;
+sqNos_w = width * .04;
+sqNos_h = height * .03;
+
+//hair
+//bottom
+hairLine_X1 = width * .15;
+hairLine_Y1 = height * .28;
+hairLine_X2 = width * .32;
+hairLine_Y2 = height * .55;
+hairLine_X3 = width * .85;
+hairLine_Y3 = height * .27;
+hairLine_X4 = width * .86;
+hairLine_Y4 = height * .3;
+
+//top
+headHair_X1 = width *.15;
+headHair_Y1 = height * .28;
+headHair_X2 = width * .36;
+headHair_Y2 = height * -.026;
+headHair_X3 = width * .64;
+headHair_Y3 = height * -.027;
+headHair_X4 = width * .86;
+headHair_Y4 = height * .301;
+
+}
+
+//EXECUTE
+void draw(){
+  background(255,255,255);
+  //face
+  fill(175,95,20);
+  ellipse(headX, headY, headWidth, headHeight);
+  //eyes
+  //left
+  fill(255,255,255);
+  ellipse(leftEyeX, leftEyeY, leftEyeWidth, leftEyeHeight);
+  
+  //right
+  ellipse(rightEyeX, rightEyeY, rightEyeWidth, rightEyeHeight);
+  
+  //eyeballs
+  ellipse(leftEball_X, leftEball_Y, leftEball_Width, leftEball_Height);
+  //right
+  ellipse(rightEball_X, rightEball_Y, rightEball_Width, rightEball_Height);
+  
+  //pupils
+  //left
+  fill(170,64,65);
+  ellipse(pupilLeft_X, pupilLeft_Y, pupilLeft_Width, pupilLeft_Height);
+  
+  //right
+  ellipse(pupilRight_X, pupilRight_Y, pupilRight_Width, pupilRight_Height);
+  
+  fill(175,95,20);
+  //nose
+  //triangle(nose_X1, nose_Y1, nose_X2, nose_Y2, nose_X3, nose_Y3);
+  
+  //nostril
+  //left
+  stroke(0);
+  curve(nostril_X1, nostril_Y1, nostril_X2, nostril_Y2, nostril_X3, nostril_Y3, nostril_X4, nostril_Y4);
+  
+  //right
+  curve (nostril_X5, nostril_Y5, nostril_X6, nostril_Y6, nostril_X7,nostril_Y7, nostril_X8, nostril_Y8);
+  
+  //mid nostril
+  ellipse(midNos_X, midNos_Y, midNos_w, midNos_h);
+  
+  //mid nostril
+  noStroke();
+  rect(sqNos_X, sqNos_Y, sqNos_w, sqNos_h); 
+  
+  //left Nos ellipse
+  
+  
+  //right Nos ellipse
+  
+  fill(170,64,65);
+  // mouth
+  stroke(5);
+  ellipse(upperLip_X, upperLip_Y, upLipWidth, upLipHeight);
+  
+  // lip
+  line(lipLine_X1, lipLine_Y2, lipLine_X2, lipLine_Y2);
+ 
+  //brow
+  fill(0);
+  
+  //left
+  noStroke();
+  rect(leftBrow_X, leftBrow_Y, leftBrow_W, leftBrow_H);
+  
+  //right
+  rect(rightBrow_X, rightBrow_Y, rightBrow_W, rightBrow_H);
+  stroke(0);
+
+  //hair
+  //top
+  fill(0);
+  bezier(headHair_X1, headHair_Y1,headHair_X2, headHair_Y2, headHair_X3, headHair_Y3, headHair_X4, headHair_Y4);
+
+  //hairline
+  bezier(hairLine_X1, hairLine_Y1, hairLine_X2, hairLine_Y2, hairLine_X3, hairLine_Y3, hairLine_X4, hairLine_Y4);
+  
+
+}
