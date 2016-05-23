@@ -74,6 +74,17 @@ float sqNos_Y;
 float sqNos_w;
 float sqNos_h; 
 
+//nostril black ellipse
+float ellLeft_X;
+float ellLeft_Y;
+float ellLeft_W;
+float ellLeft_H;
+
+float ellRit_X;
+float ellRit_Y;
+float ellRit_W;
+float ellRit_H;
+
 //mouth
 float upperLip_X;
 float upperLip_Y;
@@ -116,6 +127,17 @@ float headHair_X3;
 float headHair_Y3;
 float headHair_X4;
 float headHair_Y4;
+
+//ears
+//left
+float lftEar_X1;
+float lftEar_Y1;
+float lftEar_X2;
+float lftEar_Y2;
+float lftEar_X3;
+float lftEar_Y3;
+float lftEar_X4;
+float lftEar_Y4;
 
 //Initialize
 void setup() {
@@ -213,15 +235,26 @@ nostril_Y7 = nose_Y2 * 1.01;
 nostril_X8 = nose_X3 * .83;
 nostril_Y8 = nose_Y2 * .85;
 
-midNos_X = width * .505;
+midNos_X = width * .504;
 midNos_Y = height * .65;
 midNos_w = width * .03;
 midNos_h = height * .03;
 
 sqNos_X = width * .488;
-sqNos_Y = height * .62;
+sqNos_Y = height * .63;
 sqNos_w = width * .04;
 sqNos_h = height * .03;
+
+//nostril black ellipse
+ellLeft_X = midNos_X * .96;
+ellLeft_Y = midNos_Y * 1.01;
+ellLeft_W = width * .0085;
+ellLeft_H = height * .0085;
+
+ellRit_X = midNos_X * 1.04;
+ellRit_Y = midNos_Y * 1.01;
+ellRit_W = width * .0085;
+ellRit_H = height * .0085;
 
 //hair
 //bottom
@@ -243,6 +276,21 @@ headHair_X3 = width * .64;
 headHair_Y3 = height * -.027;
 headHair_X4 = width * .86;
 headHair_Y4 = height * .301;
+
+//ears
+lftEar_X1 = width * .6;
+lftEar_Y1 = height * .6;
+lftEar_X2 = width * .5;
+lftEar_Y2 = height * .58;
+lftEar_X3 = width * .2;
+lftEar_Y3 = height * .2;
+lftEar_X4 = width * .6;
+lftEar_Y4 = height * .1;
+
+//rgtEar_X = ;
+//rgtEar_Y = ;
+//rgtEar_W = ;
+//rgtEar_H = ;
 
 }
 
@@ -293,10 +341,14 @@ void draw(){
   rect(sqNos_X, sqNos_Y, sqNos_w, sqNos_h); 
   
   //left Nos ellipse
-  
-  
+  //nostril black ellipse
+  fill(0);
+  ellipse(ellLeft_X, ellLeft_Y, ellLeft_W, ellLeft_H);
+
   //right Nos ellipse
+  ellipse(ellRit_X, ellRit_Y, ellRit_W, ellRit_H);
   
+
   fill(170,64,65);
   // mouth
   stroke(5);
@@ -324,5 +376,6 @@ void draw(){
   //hairline
   bezier(hairLine_X1, hairLine_Y1, hairLine_X2, hairLine_Y2, hairLine_X3, hairLine_Y3, hairLine_X4, hairLine_Y4);
   
-
+  //ears
+  bezier(lftEar_X1, lftEar_Y1, lftEar_X2, lftEar_Y2, lftEar_X3, lftEar_Y3, lftEar_X4, lftEar_Y4);
 }
